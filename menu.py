@@ -278,11 +278,11 @@ class Menu:
 
     def show(self):
         """Show this menu on the display."""
-        self.display.show(self.display_group)
+        self.display.root_group = self.display_group
 
     def hide(self):
         """Show CircuitPython REPL again."""
-        self.display.show(None)  # type: ignore[arg-type]
+        self.display.root_group = None  # type: ignore[arg-type]
 
     def serialize(self) -> dict[str, Any]:
         """Get a dict of all item values in this menu.
